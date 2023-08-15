@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<launch>
+ <node name="manipulation_subscriber" pkg="pratham_bot" type="manipulation_subscriber.py" /> 
+ <node name="navigation_subscriber" pkg="pratham_bot" type="navigation_subscriber.py" /> 
+ <node name="perception_publisher" pkg="pratham_bot" type="perception_publisher.py" /> 
+ </launch>

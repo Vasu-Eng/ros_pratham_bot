@@ -4,7 +4,7 @@ from std_msgs.msg import String
 
 rospy.init_node('send_data')
 
-publisher = rospy.Publisher("/data/send",String, queue_size=1) # enter topic and type accordingly
+publisher = rospy.Publisher("/data",String, queue_size=1) # enter topic and type accordingly
 
 
 def callback(event):

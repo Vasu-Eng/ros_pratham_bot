@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # publisher command :-
-# rosrun teleop_twist_keyboard teleop_twist_keyboard.py _speed:=100 _turn:=100
+# rosrun teleop_twist_keyboard teleop_twist_keyboard.py _speed:=100 _turn:=100 cmd_vel:=/navigation/cmd_vel
 #sudo chown root.gpio /dev/gpiomem
 import rospy
 from motor_drivers_interface import motor_driver 
@@ -35,7 +35,7 @@ def take_action(X,Z):
 
 def main():
     rospy.init_node('navigation_subscriber')
-    rospy.Subscriber("/cmd_vel",Twist,callback)
+    rospy.Subscriber("/navigation/cmd_vel",Twist,callback)
     rospy.spin()
 
 

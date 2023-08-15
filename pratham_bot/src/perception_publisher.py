@@ -13,7 +13,7 @@ if not cap.isOpened():
 bridge = CvBridge()
 
 def main():
-    rospy.init_node("image_publisher", anonymous= False)
+    rospy.init_node("perception_publisher", anonymous= False)
     pub = rospy.Publisher("/image",Image,queue_size=1)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():

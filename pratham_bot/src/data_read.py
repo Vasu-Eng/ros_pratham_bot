@@ -12,7 +12,7 @@ def callback(msg):
 
 def main():
     rospy.init_node('reciever')
-    rospy.Subscriber("~topic",String,callback) # enter topic accordingly & type
+    rospy.Subscriber("/data",String,callback) # enter topic accordingly & type
     rospy.spin()
 
 

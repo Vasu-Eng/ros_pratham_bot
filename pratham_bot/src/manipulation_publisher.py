@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import rospy
-from std_msgs.msg import UInt16MultiArray
+from std_msgs.msg import Float32MultiArray
 import sys
 from select import select
 import termios
@@ -25,9 +25,9 @@ def getKey(settings,timeout):
 def main():
     global pose_pan,pose_tilt
     rospy.init_node('manipulation_publisher')
-    publisher = rospy.Publisher("/manipulation/servo_ctl",UInt16MultiArray,queue_size=10)
+    publisher = rospy.Publisher("/manipulation/servo_ctl",Float32MultiArray,queue_size=10)
     rospy.rate = 10
-    msg = UInt16MultiArray()
+    msg = Float32MultiArray()
     settings = termios.tcgetattr(sys.stdin)
     try:
         while(1):
